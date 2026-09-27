@@ -42,7 +42,9 @@
     "build:web": "expo export --platform web",
     "typecheck": "tsc --noEmit && tsc --noEmit -p amplify",
     "lint": "expo lint",
-    "sandbox": "ampx sandbox"
+    "sandbox": "ampx sandbox",
+    "sandbox:delete": "ampx sandbox delete",
+    "sandbox:auto-cleanup": "node scripts/sandbox-with-cleanup.mjs"
   },
   "private": true
 }

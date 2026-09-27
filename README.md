@@ -49,6 +49,14 @@ sandbox (or a pipeline deploy) has created it.
 
 Other scripts: `npm run typecheck`, `npm run lint`, `npm run build:web`.
 
+Sandbox cleanup: `npm run sandbox` leaves the sandbox stack deployed after you
+stop it (Ctrl-C), so restarting is fast but it keeps costing (small amounts)
+until removed. To avoid orphaned stacks:
+
+- `npm run sandbox:delete` — manually delete the current sandbox stack.
+- `npm run sandbox:auto-cleanup` — same as `npm run sandbox`, but deletes the
+  stack automatically on Ctrl-C. Next start redeploys from scratch (slower).
+
 > **Native note:** Amplify uses native modules that Expo Go doesn't include. To run
 > on a device, use a development build (`npx expo run:ios` / `run:android`, or
 > `eas build --profile development`).
